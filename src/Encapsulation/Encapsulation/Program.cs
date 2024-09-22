@@ -3,6 +3,7 @@ using Encapsulation.Employment;
 using System;
 using Encapsulation.Calendar;
 using Encapsulation.Banking;
+using Encapsulation.Extra;
 
 namespace Encapsulation;
 
@@ -53,6 +54,15 @@ public class Program
         Console.WriteLine($"Balance after withdrawal: {account.GetBalance()}");
 
         // Extra
+        TemperatureConverter tempCelsius = new TemperatureConverter(25, "C");
+        TemperatureConverter tempFahrenheit = new TemperatureConverter(77, "F");
+        TemperatureConverter tempKelvin = new TemperatureConverter(298.15, "K");
 
+        Console.WriteLine($"25°C dalam Fahrenheit: {tempCelsius.ConvertToFahrenheit()}°F");
+        Console.WriteLine($"77°F dalam Celcius: {tempFahrenheit.ConvertToCelsius()}°C");
+        Console.WriteLine($"298.15K dalam Celcius: {tempKelvin.ConvertToCelsius()}°C");
+
+        TemperatureConverter invalidTemp = new TemperatureConverter(-500, "F");
+        Console.WriteLine($"Suhu invalid disetel ke: {invalidTemp.Temperature}°F");
     }
 }
