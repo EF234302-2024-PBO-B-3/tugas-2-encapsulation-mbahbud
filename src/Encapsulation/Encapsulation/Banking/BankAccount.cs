@@ -29,7 +29,6 @@ namespace Encapsulation.Banking
             get { return _balance; }
             set { _balance = value < 0 ? 0.0 : value; }
         }
-r
         public BankAccount(string accountNumber, string accountHolder, double balance)
         {
             AccountNumber = accountNumber;
